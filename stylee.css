@@ -1,0 +1,310 @@
+/*
+stylee.css
+style sheet for subway game
+famprr.com
+
+*/
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica,Arial,sans-serif; 
+	font-size:100%;
+	background:#F2A900;
+}
+
+section#branding {
+	background:#002D72;
+	color:#fff;
+	padding:30px 0 ;
+	text-align:center;
+	height:120px;
+
+
+}
+
+footer {
+	padding:25px;
+	background:#C3DAEC;
+}
+
+footer img {
+	width:200px;
+	display:block;
+	margin:0 auto;
+}
+
+footer a {
+	text-decoration:none;
+}
+
+div#container {
+	width:90%; 
+	max-width: 640px; 
+	border:1px solid #000;
+	margin:20px auto;
+	padding:0 0;
+	background:#fff;
+
+}
+
+div.stage {
+	min-height: 240px;
+	margin:20px auto;
+
+
+}
+
+div.locationPanel {
+	height: 80px;
+	background: #000;
+	color: #fff;
+	padding:25px 0 0px 0px;
+}
+
+div.theLine {
+	height:10px;
+	background:#fff;
+	padding:0;
+	margin:10px 0;
+
+/*	display: flex; 
+	flex-flow: row nowrap; 
+	justify-content: space-around;*/
+}
+
+div.progressBar {
+	width:0%;
+	height: 10px; 
+	background:#888;
+}
+
+div.progressBar.onway23 {
+	width:6%;
+}
+
+div.progressBar.at23 {
+	width:calc(12% + 14px); 
+}
+
+div.stationSet {
+	margin:0px 12%;
+	width:76%;
+	position: relative; 
+}
+
+div#person-you {
+	position:absolute;
+    width:34px;	
+}
+
+div#person-you.at28 {
+	left:calc(50% - 17px);
+}
+
+
+div#person-you.at33 {
+	left:calc(100% - 17px);
+}
+
+
+div.station {
+	width:28px;
+	height:28px;
+	background:#fff;
+	border:1px solid #fff;
+	border-radius: 50%;
+	color:#000;
+	text-align: center;
+	padding:4px 0px;
+	margin-top:-8px;
+	display: inline-block; 
+	position:absolute;
+	top:-20px;
+	font-size:.9rem;
+	
+}
+
+div.station#station-23 {
+	
+}
+
+div.station#station-28 {
+  left:calc(50% - 14px);
+  position: absolute;
+}
+
+div.station#station-33 {
+	position: absolute;
+	right:0;
+}
+
+ div.station.arrived {
+	background:yellow;
+}
+
+div.station.past {
+	background:#888;
+}
+
+div#station-33.success {
+	animation: successBlink 2s infinite ;
+}
+
+@keyframes successBlink {
+ 0%,100% {
+ 	background:red;
+ 	color:#fff;
+ 	width:33px;
+ 	height:33px;
+ 	font-size:1rem;
+ }
+ 50% {
+ 	background:green;
+ 	color:#fff;
+ 	width:28px;
+ 	height:28px; 	
+ 	color:green;
+ }
+
+}
+
+
+/* status box */ 
+
+div.statusBox {
+	padding:20px;
+	/*height: 200px; */
+}
+
+div.statusBox h3 {
+	font-weight: 400; 
+	margin:5px 0 2px 0;
+	font-size:1.1em;
+}
+
+div.statusBox h4 {
+	font-weight:600;
+	font-size:1.2em;
+	margin:2px 0 4px 0;
+}
+
+
+
+button {
+   padding:10px;
+   margin-top:20px;
+   border-radius:6px;
+   cursor: pointer;
+   width:40%;
+   max-width: 120px; 
+   font-size:1em;
+   text-transform: uppercase;
+}
+
+div.indicator-steps,div.indicator-trains {
+	padding:20px 20px;
+}
+
+
+/* the big picture */ 
+
+div.stateDependent {
+	display:none;
+
+}
+
+div#preGame p {
+	width:88%;
+	padding:2px 8% 0 4%;
+}
+
+div#preGame,div#postGame {
+	padding:2px 0 30px 20px;
+}
+
+div#preGame p {
+	line-height:1.5; 
+}
+
+
+p span.raised {
+	font-size:1.2rem; 
+}
+
+
+
+
+div#postGame {
+	
+}
+
+
+
+button#btn-goPlay {
+
+}
+
+/* Ad for Famprr */ 
+#ad-for-famprr {
+	
+	border: 1px solid #000;
+	text-align: center;
+	background:#000;
+	color:#fff;
+}
+
+div.ad-blurb {
+	padding: 0px 20px;
+}
+
+div.ad-blurb a {
+	text-decoration:none;
+	color:#d34eb8;
+}
+
+ .ellip-holder {
+  /* Clip edges, as some of the lines don't terminate nicely. */
+    overflow: hidden;
+    position: relative;
+    width: 100%; 
+    height: 50px;
+    margin-top:14px;
+    
+}	
+
+
+.ellipse {
+    position: absolute;
+    background: radial-gradient(ellipse, transparent, transparent 7px, white 7px, white 10px, transparent 11px);
+    background-size: 36px 40px;
+    width: 100%;
+    height: 20px;
+
+-webkit-animation: 3s squibs infinite ease;
+	animation: 3s squibs infinite ease;
+
+}
+
+.ellipse2 {
+    top: 20px;
+    left: 18px;
+    background-position: 0px -20px;
+}	
+
+
+
+@keyframes squibs {
+
+ 0%,100% {
+   background-size: 36px 40px;
+ }
+
+ 50% {
+   background-size: 56px 40px;
+
+ }
+}
